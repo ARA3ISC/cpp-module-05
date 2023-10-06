@@ -1,5 +1,5 @@
-#ifndef GRADETOHIGHTEXCEPTION_HPP
-#define GRADETOHIGHTEXCEPTION_HPP
+#ifndef GRADETOOHIGHTEXCEPTION_HPP
+#define GRADETOOHIGHTEXCEPTION_HPP
 
 #include <iostream>
 
@@ -9,7 +9,8 @@ class GradeTooHighException : public std::exception
 		/* data */
 	public:
 		GradeTooHighException();
-		~GradeTooHighException();
+		~GradeTooHighException() throw();
+
 		const char * what () const throw ();
 
 };

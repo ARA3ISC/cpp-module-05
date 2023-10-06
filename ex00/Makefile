@@ -2,7 +2,7 @@ NAME= exceptions
 CXX= c++
 RM= rm -rf
 CXXFLAGS= -Werror -Wextra -Wall -std=c++98
-SRC= main.cpp Bureaucrat.cpp
+SRC= main.cpp Bureaucrat.cpp GradeTooHighException.cpp GradeTooLowException.cpp
 OBJ=$(SRC:.cpp=.o)
 
 all: $(NAME)

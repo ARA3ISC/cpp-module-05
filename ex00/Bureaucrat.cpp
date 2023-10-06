@@ -6,7 +6,7 @@
 /*   By: maneddam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 18:01:36 by maneddam          #+#    #+#             */
-/*   Updated: 2023/10/04 19:09:28 by maneddam         ###   ########.fr       */
+/*   Updated: 2023/10/06 18:54:42 by maneddam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,14 @@ Bureaucrat::Bureaucrat() : _name("unknown")
 	std::cout << "Constructing Bureaucrat" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const std::string &name, int range) : _name(name)
+Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name)
 {
-	this->_grade = range;
+	if (grade < 1)
+		throw GradeTooHighException();
+	else if (grade > 150)
+		throw GradeTooLowException();
+
+	this->_grade = grade;
 	std::cout << "Constructing Bureaucrat" << std::endl;
 }
 
@@ -30,27 +35,10 @@ Bureaucrat::Bureaucrat(const Bureaucrat &obj) : _name(obj._name)
 	std::cout << "Copy constructor called" << std::endl;
 }
 
-/*
-A& operator=(const A& right)
-{
-    if (this == &right) return *this;
-
-    // manually call the destructor of the old left-side object
-    // (`this`) in the assignment operation to clean it up
-    this->~A();
-    // use "placement new" syntax to copy-construct a new `A`
-    // object from `right` into left (at address `this`)
-    new (this) A(right);
-    return *this;
-}
-*/
-
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &obj)
 {
 	if (this != &obj)
-	{
 		this->_grade = obj._grade;
-	}
 	return *this;
 }
 
@@ -72,10 +60,14 @@ int Bureaucrat::getGrade() const
 
 void Bureaucrat::incrementBureaucrat()
 {
+	if (this->_grade == 1)
+		throw GradeTooHighException();
 	this->_grade--;
 }
 
 void Bureaucrat::decrementBureaucrat()
 {
+	if (this->_grade == 150)
+		throw GradeTooLowException();
 	this->_grade++;
 }

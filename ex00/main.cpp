@@ -6,7 +6,7 @@
 /*   By: maneddam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 17:43:22 by maneddam          #+#    #+#             */
-/*   Updated: 2023/10/04 19:06:57 by maneddam         ###   ########.fr       */
+/*   Updated: 2023/10/06 19:00:15 by maneddam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,34 @@
 
 int main()
 {
-	Bureaucrat b("arabi", 22);
-	std::cout << std::endl;
+	try
+	{
+		// ! still the case of creating object with the default constructor
+		Bureaucrat b("arabi", 33);
 
-	std::cout << "name : " << b.getName() << " | grade : " << b.getGrade() << std::endl;
+		b.decrementBureaucrat();
+		b.decrementBureaucrat();
 
-	Bureaucrat b1 = b;
+		std::cout << std::endl;
+		std::cout << b << std::endl;
+		std::cout << std::endl;
 
-	// b1 = b;
-	std::cout << std::endl;
-	std::cout << "name : " << b1.getName() << " | grade : " << b1.getGrade() << std::endl;
+
+		// Bureaucrat b1;
+
+		// b1 = b;
+
+		// b1.incrementBureaucrat();
+
+		// std::cout << std::endl;
+		// std::cout << "name : " << b1.getName() << " | grade : " << b1.getGrade() << std::endl;
+	}
+	catch(std::exception& e)
+	{
+		std::cerr << RED << e.what() << RESET << std::endl;
+	}
+
+
 	return 0;
 }
 
