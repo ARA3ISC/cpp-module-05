@@ -3,7 +3,7 @@
 
 # include "GradeTooHighException.hpp"
 # include "GradeTooLowException.hpp"
-# include <iostream>
+// # include <iostream>
 
 # define RED "\033[31m"
 # define GREEN "\033[92m"
@@ -29,10 +29,5 @@ class Bureaucrat
 		void decrementBureaucrat();
 };
 
-std::ostream& operator<<(std::ostream& COUT, Bureaucrat& obj)
-{
-	COUT << obj.getName() << ", bureaucrat grade " << obj.getGrade();
-	return COUT;
-}
-
+std::ostream& operator<<(std::ostream& COUT, Bureaucrat& obj);
 #endif

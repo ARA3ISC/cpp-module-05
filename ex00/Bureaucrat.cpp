@@ -6,7 +6,7 @@
 /*   By: maneddam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 18:01:36 by maneddam          #+#    #+#             */
-/*   Updated: 2023/10/06 18:54:42 by maneddam         ###   ########.fr       */
+/*   Updated: 2023/10/10 22:20:45 by maneddam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,10 @@ void Bureaucrat::decrementBureaucrat()
 	if (this->_grade == 150)
 		throw GradeTooLowException();
 	this->_grade++;
+}
+
+std::ostream& operator<<(std::ostream& COUT, Bureaucrat& obj)
+{
+	COUT << obj.getName() << ", bureaucrat grade " << obj.getGrade();
+	return COUT;
 }

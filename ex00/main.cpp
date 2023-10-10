@@ -6,7 +6,7 @@
 /*   By: maneddam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 17:43:22 by maneddam          #+#    #+#             */
-/*   Updated: 2023/10/06 19:00:15 by maneddam         ###   ########.fr       */
+/*   Updated: 2023/10/10 22:23:42 by maneddam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main()
 	try
 	{
 		// ! still the case of creating object with the default constructor
-		Bureaucrat b("arabi", 33);
+		Bureaucrat b("arabi", 149);
 
 		b.decrementBureaucrat();
 		b.decrementBureaucrat();
