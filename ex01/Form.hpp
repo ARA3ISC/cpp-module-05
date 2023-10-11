@@ -11,6 +11,8 @@
 # define RESET "\033[0m"
 # define CYAN "\033[96m"
 
+class Bureaucrat;
+
 class Form
 {
 	private:

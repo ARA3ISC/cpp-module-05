@@ -6,7 +6,7 @@
 /*   By: maneddam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 17:43:22 by maneddam          #+#    #+#             */
-/*   Updated: 2023/10/11 15:23:29 by maneddam         ###   ########.fr       */
+/*   Updated: 2023/10/11 15:58:59 by maneddam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,22 @@ int main()
 {
 	try
 	{
-		Bureaucrat bq("arabi", 0);
+		/* bureaucrat can sign */
+		Bureaucrat bq("arabi", 10);
 
-		Form myForm("form1", 10, 8);
+		Form myForm("contract 1", 10, 8);
 		myForm.beSigned(bq);
-
-
 		std::cout << myForm << std::endl;
-		// std::cout << f << std::endl;
+		bq.signForm(myForm);
+
+
+		/* bureaucrat cannot sign */
+		// Bureaucrat bq("arabi", 10);
+
+		// Form myForm("contract 1", 3, 8);
+		// myForm.beSigned(bq);
+		// std::cout << myForm << std::endl;
+		// bq.signForm(myForm);
 	}
 	catch(std::exception& e)
 	{
