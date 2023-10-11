@@ -3,7 +3,7 @@ CXX= c++
 RM= rm -rf
 CXXFLAGS= -Werror -Wextra -Wall -std=c++98
 SRC= main.cpp Bureaucrat.cpp GradeTooHighException.cpp GradeTooLowException.cpp \
-AForm.cpp ShrubberyCreationForm.cpp 
+AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp
 OBJ=$(SRC:.cpp=.o)
 
 all: $(NAME)
