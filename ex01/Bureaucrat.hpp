@@ -3,9 +3,9 @@
 
 # include "GradeTooHighException.hpp"
 # include "GradeTooLowException.hpp"
-# include "Form.hpp"
+# include "AForm.hpp"
 
-class Form;
+class AForm;
 
 # define RED "\033[31m"
 # define GREEN "\033[92m"
@@ -30,7 +30,7 @@ class Bureaucrat
 		void incrementBureaucrat();
 		void decrementBureaucrat();
 
-		void signForm(Form& form);
+		void signAForm(AForm& AForm);
 };
 
 std::ostream& operator<<(std::ostream& COUT, Bureaucrat& obj);

@@ -6,7 +6,7 @@
 /*   By: maneddam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 18:01:36 by maneddam          #+#    #+#             */
-/*   Updated: 2023/10/11 15:55:39 by maneddam         ###   ########.fr       */
+/*   Updated: 2023/10/11 17:41:27 by maneddam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &obj)
 	return *this;
 }
 
-
 Bureaucrat::~Bureaucrat()
 {
 	std::cout << "Destructing Bureaucrat" << std::endl;
@@ -72,17 +71,16 @@ void Bureaucrat::decrementBureaucrat()
 	this->_grade++;
 }
 
-std::ostream& operator<<(std::ostream& COUT, Bureaucrat& obj)
+std::ostream &operator<<(std::ostream &COUT, Bureaucrat &obj)
 {
 	COUT << obj.getName() << ", bureaucrat grade " << obj.getGrade();
 	return COUT;
 }
 
-void Bureaucrat::signForm(Form& form)
+void Bureaucrat::signAForm(AForm &AForm)
 {
-	if (form.is_Signed())
-		std::cout << getName() << GREEN << " signed " << form.getName() << "." << RESET << std::endl;
+	if (AForm.is_Signed())
+		std::cout << getName() << GREEN << " signed " << AForm.getName() << "." << RESET << std::endl;
 	else
-		std::cout << getName() << RED <<  " couldn't sign " << form.getName() << RESET << " because grade is too low to the required." << std::endl;
-
+		std::cout << getName() << RED << " couldn't sign " << AForm.getName() << RESET << " because grade is too low to the required." << std::endl;
 }

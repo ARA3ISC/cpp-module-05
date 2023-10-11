@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maneddam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
-/* orthodox canonical form */
+/* orthodox canonical AForm */
 
-Form::Form(std::string name, int gradeToSign, int gradeToExec): _name(name)
+AForm::AForm(std::string name, int gradeToSign, int gradeToExec) : _name(name)
 {
 	if (gradeToSign < 1 || gradeToExec < 1)
 		throw GradeTooHighException();
@@ -24,57 +24,56 @@ Form::Form(std::string name, int gradeToSign, int gradeToExec): _name(name)
 	this->_isSigned = false;
 	this->_gradeToSign = gradeToSign;
 	this->_gradeToExec = gradeToExec;
-	std::cout << "Constructing form" << std::endl;
-
+	std::cout << "Constructing AForm" << std::endl;
 }
 
-Form::Form(const Form& obj): _name(obj._name)
+AForm::AForm(const AForm &obj) : _name(obj._name)
 {
 	this->_isSigned = obj._isSigned;
 	this->_gradeToSign = obj._gradeToSign;
 	this->_gradeToExec = obj._gradeToExec;
-	std::cout << "Form copy constructor called" << std::endl;
+	std::cout << "AForm copy constructor called" << std::endl;
 }
 
-Form& Form::operator=(const Form& obj)
+AForm &AForm::operator=(const AForm &obj)
 {
 	this->_isSigned = obj._isSigned;
 	this->_gradeToSign = obj._gradeToSign;
 	this->_gradeToExec = obj._gradeToExec;
-	std::cout << "Form copy assignment operator called" << std::endl;
+	std::cout << "AForm copy assignment operator called" << std::endl;
 	return *this;
 }
 
-Form::~Form()
+AForm::~AForm()
 {
-	std::cout << "Form destructor called" << std::endl;
+	std::cout << "AForm destructor called" << std::endl;
 }
 
 /* getters */
 
-const std::string& Form::getName() const
+const std::string &AForm::getName() const
 {
 	return this->_name;
 }
 
-bool Form::is_Signed() const
+bool AForm::is_Signed() const
 {
 	return _isSigned;
 }
 
-int Form::getGradeToSign() const
+int AForm::getGradeToSign() const
 {
 	return this->_gradeToSign;
 }
 
-int Form::getGradeToExec() const
+int AForm::getGradeToExec() const
 {
 	return this->_gradeToExec;
 }
 
-std::ostream& operator<<(std::ostream& COUT, Form& obj)
+std::ostream &operator<<(std::ostream &COUT, AForm &obj)
 {
-	COUT << "Form " << obj.getName();
+	COUT << "AForm " << obj.getName();
 	if (obj.is_Signed())
 		COUT << " is " << GREEN << "signed" << RESET;
 	else
@@ -84,7 +83,7 @@ std::ostream& operator<<(std::ostream& COUT, Form& obj)
 	return COUT;
 }
 
-void Form::beSigned(Bureaucrat& bq)
+void AForm::beSigned(Bureaucrat &bq)
 {
 	if (bq.getGrade() < 1)
 		throw GradeTooHighException();
