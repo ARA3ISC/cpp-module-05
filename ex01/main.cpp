@@ -6,7 +6,7 @@
 /*   By: maneddam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 17:43:22 by maneddam          #+#    #+#             */
-/*   Updated: 2023/10/12 15:03:20 by maneddam         ###   ########.fr       */
+/*   Updated: 2023/10/12 15:04:49 by maneddam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int main()
 		/* bureaucrat can sign */
 		// Bureaucrat bq("arabi", 80);
 		// Form form1("Garden", 70, 35);
+
 
 		// form1.beSigned(bq);
 		// bq.signForm(form1);
