@@ -6,7 +6,7 @@
 /*   By: maneddam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 17:43:22 by maneddam          #+#    #+#             */
-/*   Updated: 2023/10/12 12:36:31 by maneddam         ###   ########.fr       */
+/*   Updated: 2023/10/12 14:30:56 by maneddam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,31 @@ int main()
 {
 	try
 	{
-		Bureaucrat bq("arabi", 148);
+		/* First form test */
+		// Bureaucrat bq("arabi", 12);
+		// ShrubberyCreationForm form1("upstairs");
 
-		ShrubberyCreationForm form1("home");
+		// form1.beSigned(bq);
+		// bq.signForm(form1);
+		// bq.executeForm(form1);
+
+
+		/* Second form test */
+		Bureaucrat bq("John", 43);
+		RobotomyRequestForm form1("target2");
 
 		form1.beSigned(bq);
 		bq.signForm(form1);
 		bq.executeForm(form1);
 
+
+		/* third form test */
+		// Bureaucrat bq("John", 5);
+		// PresidentialPardonForm form1("target2");
+
+		// form1.beSigned(bq);
+		// bq.signForm(form1);
+		// bq.executeForm(form1);
 	}
 	catch (std::exception &e)
 	{

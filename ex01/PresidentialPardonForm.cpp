@@ -6,7 +6,7 @@
 /*   By: maneddam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 11:02:56 by maneddam          #+#    #+#             */
-/*   Updated: 2023/10/12 11:10:10 by maneddam         ###   ########.fr       */
+/*   Updated: 2023/10/12 14:05:37 by maneddam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,9 @@ PresidentialPardonForm::~PresidentialPardonForm(){}
 
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
-	(void)executor;
-	std::cout << "begin PresidentialPardonForm executing\n";
+	if (this->is_Signed() && executor.getGrade() <= this->getGradeToExec())
+		std::cout << this->_target << GREEN << " has been pardoned by Zaphod Beeblebrox." << RESET << std::endl;
+	else
+		std::cout << this->_target << RED << " hasn't been pardoned." << RESET << std::endl;
+
 }

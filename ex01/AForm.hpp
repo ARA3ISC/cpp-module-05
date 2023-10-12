@@ -2,6 +2,8 @@
 #define AFORM_HPP
 
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 #include "GradeTooHighException.hpp"
 #include "GradeTooLowException.hpp"
 #include "Bureaucrat.hpp"
