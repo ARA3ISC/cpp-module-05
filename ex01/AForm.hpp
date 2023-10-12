@@ -33,7 +33,7 @@ public:
 	int getGradeToExec() const;
 	void beSigned(Bureaucrat &bq);
 
-	virtual void execute(Bureaucrat const & executor) = 0;
+	virtual void execute(Bureaucrat const & executor) const = 0;
 };
 
 std::ostream &operator<<(std::ostream &COUT, AForm &obj);

@@ -6,7 +6,7 @@
 /*   By: maneddam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 17:43:22 by maneddam          #+#    #+#             */
-/*   Updated: 2023/10/11 19:31:30 by maneddam         ###   ########.fr       */
+/*   Updated: 2023/10/12 12:36:31 by maneddam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,19 @@
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main()
 {
 	try
 	{
-		RobotomyRequestForm form1("home");
-		RobotomyRequestForm form2 = form1;
+		Bureaucrat bq("arabi", 148);
 
+		ShrubberyCreationForm form1("home");
 
-		// std::cout << "target : " << form2._target << std::endl;
-		std::cout << "tosign : " << form2.getGradeToSign() << std::endl;
-		std::cout << "toexec : " << form2.getGradeToExec() << std::endl;
+		form1.beSigned(bq);
+		bq.signForm(form1);
+		bq.executeForm(form1);
 
 	}
 	catch (std::exception &e)
