@@ -1,4 +1,4 @@
-NAME= exceptions
+NAME= forms
 CXX= c++
 RM= rm -rf
 CXXFLAGS= -Werror -Wextra -Wall -std=c++98
