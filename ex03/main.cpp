@@ -6,45 +6,47 @@
 /*   By: maneddam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 17:43:22 by maneddam          #+#    #+#             */
-/*   Updated: 2023/10/12 14:30:56 by maneddam         ###   ########.fr       */
+/*   Updated: 2023/10/12 17:25:21 by maneddam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main()
 {
 	try
 	{
-		/* First form test */
-		// Bureaucrat bq("arabi", 12);
-		// ShrubberyCreationForm form1("upstairs");
+		/* valid form */
+		Bureaucrat bq("arabi", 20);
+		Intern someRandomIntern;
+		AForm* rrf;
 
-		// form1.beSigned(bq);
-		// bq.signForm(form1);
-		// bq.executeForm(form1);
+		rrf = someRandomIntern.makeForm("presidential pardon", "Bender");
 
+		if (rrf)
+		{
+			rrf->beSigned(bq);
+			bq.signForm(*rrf);
+			rrf->execute(bq);
 
-		/* Second form test */
-		Bureaucrat bq("John", 43);
-		RobotomyRequestForm form1("target2");
+			delete rrf;
+		}
 
-		form1.beSigned(bq);
-		bq.signForm(form1);
-		bq.executeForm(form1);
+		/* invalid form */
+		// Bureaucrat bq("arabi", 2);
+		// Intern someRandomIntern;
+		// AForm* rrf;
 
+		// rrf = someRandomIntern.makeForm("presidential pardondd", "Bender");
 
-		/* third form test */
-		// Bureaucrat bq("John", 5);
-		// PresidentialPardonForm form1("target2");
-
-		// form1.beSigned(bq);
-		// bq.signForm(form1);
-		// bq.executeForm(form1);
+		// if (rrf)
+		// {
+		// 	rrf->beSigned(bq);
+		// 	bq.signForm(*rrf);
+		// 	rrf->execute(bq);
+		// }
 	}
 	catch (std::exception &e)
 	{
