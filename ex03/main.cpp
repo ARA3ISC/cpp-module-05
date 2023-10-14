@@ -6,7 +6,7 @@
 /*   By: maneddam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 17:43:22 by maneddam          #+#    #+#             */
-/*   Updated: 2023/10/12 17:25:21 by maneddam         ###   ########.fr       */
+/*   Updated: 2023/10/14 13:27:36 by maneddam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int main()
 			delete rrf;
 		}
 
-		/* invalid form */
+		/* invalid form name */
 		// Bureaucrat bq("arabi", 2);
 		// Intern someRandomIntern;
 		// AForm* rrf;
@@ -46,6 +46,8 @@ int main()
 		// 	rrf->beSigned(bq);
 		// 	bq.signForm(*rrf);
 		// 	rrf->execute(bq);
+
+		// 	delete rrf;
 		// }
 	}
 	catch (std::exception &e)
