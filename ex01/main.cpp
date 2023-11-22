@@ -18,20 +18,14 @@ int main()
 	try
 	{
 		/* bureaucrat can sign */
-		Bureaucrat bq("arabi", 11);
-		Form form1("home", 20, 20);
+		Bureaucrat bq("arabi", 21);
+		Form form1("home", 30, 20);
 
 		form1.beSigned(bq);
 		bq.signForm(form1);
 
+		std::cout << form1 << std::endl;
 
-		/* bureaucrat can sign */
-		// Bureaucrat bq("arabi", 80);
-		// Form form1("Garden", 70, 35);
-
-
-		// form1.beSigned(bq);
-		// bq.signForm(form1);
 	}
 	catch (std::exception &e)
 	{

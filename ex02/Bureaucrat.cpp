@@ -92,6 +92,6 @@ void Bureaucrat::executeForm(AForm const & form)
 		std::cout << getName() << GREEN << " executed " << form.getName() << "." << RESET << std::endl;
 		form.execute(*this);
 	}
-	else
+	else 
 		std::cout << getName() << RED << " failed to execute " << form.getName() << "." << RESET << std::endl;
 }

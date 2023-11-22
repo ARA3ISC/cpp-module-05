@@ -14,6 +14,8 @@
 
 /* orthodox canonical Form */
 
+Form::Form(): _name("uknown"), _isSigned(false), _gradeToSign(0), _gradeToExec(0) {}
+
 Form::Form(std::string name, int gradeToSign, int gradeToExec) : _name(name)
 {
 	if (gradeToSign < 1 || gradeToExec < 1)
@@ -37,6 +39,8 @@ Form::Form(const Form &obj) : _name(obj._name)
 
 Form &Form::operator=(const Form &obj)
 {
+	if (this == &obj)
+		return *this;
 	this->_isSigned = obj._isSigned;
 	this->_gradeToSign = obj._gradeToSign;
 	this->_gradeToExec = obj._gradeToExec;

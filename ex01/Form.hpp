@@ -22,6 +22,7 @@ private:
 	int _gradeToExec;
 
 public:
+	Form();
 	Form(std::string name, int gradeToSign, int _gradeToExec);
 	Form(const Form &obj);
 	Form &operator=(const Form &obj);

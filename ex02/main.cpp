@@ -30,21 +30,21 @@ int main()
 
 
 		/* Second form test */
-		Bureaucrat bq("John", 43);
-		RobotomyRequestForm form1("target2");
-
-		form1.beSigned(bq);
-		bq.signForm(form1);
-		bq.executeForm(form1);
-
-
-		/* third form test */
-		// Bureaucrat bq("John", 5);
-		// PresidentialPardonForm form1("target2");
+		// Bureaucrat bq("John", 43);
+		// RobotomyRequestForm form1("target2");
 
 		// form1.beSigned(bq);
 		// bq.signForm(form1);
 		// bq.executeForm(form1);
+
+
+		/* third form test */
+		Bureaucrat bq("John", 5);
+		PresidentialPardonForm form1("target2");
+
+		form1.beSigned(bq);
+		bq.signForm(form1);
+		bq.executeForm(form1);
 	}
 	catch (std::exception &e)
 	{

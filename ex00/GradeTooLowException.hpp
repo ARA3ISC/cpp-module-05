@@ -5,8 +5,6 @@
 
 class GradeTooLowException : public std::exception
 {
-	private:
-		/* data */
 	public:
 		GradeTooLowException();
 		~GradeTooLowException() throw() ;
