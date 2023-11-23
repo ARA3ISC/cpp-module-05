@@ -3,7 +3,7 @@
 
 # include "GradeTooHighException.hpp"
 # include "GradeTooLowException.hpp"
-// # include <iostream>
+# include <iostream>
 
 # define RED "\033[31m"
 # define GREEN "\033[92m"

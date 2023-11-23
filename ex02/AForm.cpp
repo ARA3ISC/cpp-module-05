@@ -14,7 +14,7 @@
 
 /* orthodox canonical AForm */
 
-AForm::AForm(std::string name, int gradeToSign, int gradeToExec) : _name(name)
+AForm::AForm(std::string name, int gradeToSign, int gradeToExec) : _name(name), _gradeToSign(gradeToSign), _gradeToExec(gradeToExec)
 {
 	if (gradeToSign < 1 || gradeToExec < 1)
 		throw GradeTooHighException();
@@ -22,24 +22,18 @@ AForm::AForm(std::string name, int gradeToSign, int gradeToExec) : _name(name)
 		throw GradeTooLowException();
 
 	this->_isSigned = false;
-	this->_gradeToSign = gradeToSign;
-	this->_gradeToExec = gradeToExec;
 	std::cout << "Constructing AForm" << std::endl;
 }
 
-AForm::AForm(const AForm &obj) : _name(obj._name)
+AForm::AForm(const AForm &obj) : _name(obj._name), _gradeToSign(obj._gradeToSign), _gradeToExec(obj._gradeToExec)
 {
 	this->_isSigned = obj._isSigned;
-	this->_gradeToSign = obj._gradeToSign;
-	this->_gradeToExec = obj._gradeToExec;
 	std::cout << "AForm copy constructor called" << std::endl;
 }
 
 AForm &AForm::operator=(const AForm &obj)
 {
 	this->_isSigned = obj._isSigned;
-	this->_gradeToSign = obj._gradeToSign;
-	this->_gradeToExec = obj._gradeToExec;
 	std::cout << "AForm copy assignment operator called" << std::endl;
 	return *this;
 }
