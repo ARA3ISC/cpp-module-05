@@ -12,8 +12,6 @@
 
 #include "PresidentialPardonForm.hpp"
 
-
-
 PresidentialPardonForm::PresidentialPardonForm(const std::string &target): AForm("PresidentialPardonForm", 25, 5)
 {
 	this->_target = target;

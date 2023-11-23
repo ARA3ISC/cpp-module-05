@@ -21,12 +21,12 @@ int main()
 	try
 	{
 		/* First form test */
-		// Bureaucrat bq("arabi", 12);
-		// ShrubberyCreationForm form1("upstairs");
+		Bureaucrat bq("arabi", 12);
+		ShrubberyCreationForm form1("upstairs");
 
-		// form1.beSigned(bq);
-		// bq.signForm(form1);
-		// bq.executeForm(form1);
+		form1.beSigned(bq);
+		bq.signForm(form1);
+		bq.executeForm(form1);
 
 
 		/* Second form test */
@@ -39,12 +39,12 @@ int main()
 
 
 		/* third form test */
-		Bureaucrat bq("John", 5);
-		PresidentialPardonForm form1("target2");
+		// Bureaucrat bq("John", 5);
+		// PresidentialPardonForm form1("target2");
 
-		form1.beSigned(bq);
-		bq.signForm(form1);
-		bq.executeForm(form1);
+		// form1.beSigned(bq);
+		// bq.signForm(form1);
+		// bq.executeForm(form1);
 	}
 	catch (std::exception &e)
 	{
